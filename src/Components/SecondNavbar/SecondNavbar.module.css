@@ -1,0 +1,59 @@
+.secondNavbar{
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    padding: 8px 8%;
+    box-shadow: 0 3px 5px -2px rgb(46, 46, 46);
+    background-color:#88d2e4; 
+    border-bottom-left-radius: 30px;
+    width: 75%;
+    position: absolute;
+    right: 0;
+    user-select: none;
+}
+
+.navMenu{
+    display: flex;
+    font-size: 18px;
+    gap: 40px;
+    margin-right: 20%;
+    color: var(--primary-color);
+}
+
+.navMenu li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.navMenu li a:hover{
+    color: rgb(4, 4, 4);
+}
+
+.navMenu hr{
+    border: none;
+    width: 80%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.navSearch{
+    border: 1px solid var(--primary-color);
+    border-radius: 18px;
+    padding: 10px 20px;
+    outline: none;
+    font-size: 16px;
+    width: 280px;
+    height: 45px;
+    background-color: #d0eef6;
+    transition: 0.3s;
+}
+
+.navSearch:active{
+    transform: scale(1.1);
+}
