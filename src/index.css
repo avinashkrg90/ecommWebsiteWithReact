@@ -9,6 +9,9 @@
   text-decoration: none;
 
   font-family: "Outfit", sans-serif;
+
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 :root {

@@ -1,5 +1,6 @@
 .header_wrapper {
     background-image: linear-gradient(180deg, #c0eaf5, #61b6cb);
+    background: linear-gradient(180deg, #f6c3fa 0%, #e1ffea33 60%);
     z-index: -1;
     display: flex;
     justify-content: space-between;
@@ -35,12 +36,12 @@
 }
 
 .headerContent h1 {
-    color: white;
+    color: var(--primary-color);
     font-size: 45px;
 }
 
 .headerContent p {
-    color: rgb(255, 255, 255);
+    color: var(--primary-color);
     font-size: 20px;
 }
 
@@ -52,13 +53,13 @@
 }
 
 .newArrivalContainer p {
-    color: rgb(255, 255, 255);
+    color: var(--secondary-color);
     font-weight: 600;
 }
 
 .newArrivalContainer button {
-    color: rgb(248, 201, 100);
-    background-color: rgb(163, 44, 64);
+    color: white;
+    background-color: rgb(196, 42, 68);
     font-size: 18px;
     padding: 8px 15px;
     border: none;
