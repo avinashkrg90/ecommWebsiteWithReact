@@ -6,6 +6,7 @@ import Item from '../Components/Item/Item'
 
 const ShopCategory = (props) => {
   const {all_product} = useContext(ShopContext);
+  console.log("all products", all_product);
   return (
     <div className={styles.shopCategory}>
       <div className={styles.banner}>
