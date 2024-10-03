@@ -16,7 +16,6 @@ function App() {
       <BrowserRouter>
         <Navbar/>
         <SecondNavbar/>
-        <Header/>
           <Routes>
             <Route path='/' element={<Shop/>}/>
             <Route path='/mens' element={<ShopCategory category="men"/>}/>
