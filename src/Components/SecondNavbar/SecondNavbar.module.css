@@ -1,6 +1,6 @@
 .secondNavbar{
     display: flex;
-    justify-content:flex-end;
+    justify-content:space-around;
     align-items: center;
     padding: 8px 8%;
     box-shadow: 0 3px 5px -2px rgb(46, 46, 46);
@@ -10,6 +10,7 @@
     position: absolute;
     right: 0;
     user-select: none;
+    z-index: 99;
 }
 
 .navMenu{
@@ -50,10 +51,92 @@
     font-size: 16px;
     width: 280px;
     height: 45px;
-    /* background-color: #d0eef6; */
     transition: 0.3s;
 }
 
 .navSearch:active{
     transform: scale(1.1);
+}
+
+.secondNavbar i{
+    color: var(--primary-color);
+    font-weight: 800;
+    font-size: 28px;
+    visibility: hidden;
+}
+
+
+@media(max-width: 1024px){
+    .navMenu{
+        display: flex;
+        font-size: 16px;
+        gap: 22px;
+        margin-right: 20%;
+        color: var(--primary-color);
+    }
+    .navSearch{
+        padding: 6px 15px;
+        font-size: 14px;
+        width: 240px;
+        height: 40px;
+    }
+}
+
+@media(max-width:800px){
+    .secondNavbar i{
+        color: var(--primary-color);
+        font-weight: 800;
+        font-size: 28px;
+        visibility:visible;
+    }
+    .navMenu{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 56px;
+        right:-420px;
+        font-size: 20px;
+        gap: 0px;
+        background-color: var(--primary-color);
+        width: 50%;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        transition: 0.6s;
+    }
+
+    .navMenuVisible{
+        right:-120px;
+    }
+
+    .navMenu li{
+        color: white;
+        height: 40px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    .navMenu li:hover{
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+    }
+    .navMenu hr{
+        visibility: hidden;
+    }
+    .selected{
+        background-color: #4b5496;
+    }
+}
+
+@media(max-width:600px){
+    .navSearch{
+        padding: 6px 15px;
+        font-size: 14px;
+        width: 240px;
+        height: 40px;
+    }
+    .navMenuVisible{
+        right:-270px;
+    }
+    .navMenuVisible{
+        right:-80px;
+    }
 }

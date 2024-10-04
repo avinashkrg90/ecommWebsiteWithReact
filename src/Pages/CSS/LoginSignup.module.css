@@ -73,3 +73,15 @@
     font-size: 18px;
     font-weight: 500;
 }
+
+@media(max-width:600px){
+    .loginSignupContainer{
+        width: 460px;
+        height: 500px;
+        background: white;
+        margin: auto ;
+        padding: 30px 60px;
+        margin-bottom: 50px;
+        border-radius: 10px;
+    }
+}

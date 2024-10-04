@@ -11,8 +11,9 @@ const Header = () => {
         </div>
         <div className={styles.headerContent}>
             <h3>Explore Categories</h3>
-            <h1>Enjoy Shopping <br/> Online</h1>
-            <p>This season we have come up with new stylish trendy products at the best ever price with exciting offers...</p>
+            <h1>Enjoy Shopping </h1>
+            <h1>Online</h1>
+            <p className={styles.headerPara}>This season we have come up with new stylish trendy products at the best ever price with exciting offers...</p>
             <div className={styles.newArrivalContainer}>
                 <p>Check new arrivals here </p>
                 <button>{`New Arrivals >>`}</button>

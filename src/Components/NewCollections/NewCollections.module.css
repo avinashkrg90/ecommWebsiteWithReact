@@ -24,8 +24,29 @@
 }
 
 .collections{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-top: 50px;
-    gap: 30px;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 1020px;
+}
+
+@media(max-width: 1024px){
+    .collections{
+        width: 720px;
+        gap: 10px;
+    }
+}
+
+@media(max-width:800px){
+    .collections{
+        width: 600px;
+        gap: 10px;
+    }
+}
+
+@media(max-width:600px){
+    .collections{
+        width: 450px;
+    }
 }

@@ -3,10 +3,7 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    /* height: 90vh; */
     margin-top: 70px;
-    /* width: 50vw;
-    margin: auto; */
     margin-bottom: 100px;
 }
 
@@ -27,5 +24,28 @@
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
+    width: 1020px;
+}
+
+@media(max-width: 1024px){
+    .popularItem{
+        width: 720px;
+        gap: 10px;
+    }
+}
+
+@media(max-width:800px){
+    .popularItem{
+        width: 600px;
+    }
+    .popularItem{
+        gap: 10px;
+    }
+}
+
+@media(max-width:600px){
+    .popularItem{
+        width: 450px;
+    }
 }

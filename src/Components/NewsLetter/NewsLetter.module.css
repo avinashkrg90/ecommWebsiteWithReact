@@ -16,6 +16,7 @@
     color: #454545;
     font-size: 40px;
     font-weight: 600;
+    text-align: center;
 }
 
 .newsLetter p{
@@ -56,4 +57,43 @@
 
 .newsLetter div button:active{
     transform: scale(0.9);
+}
+
+@media(max-width: 1350px) {
+    .newsLetter{
+        width: 85%;
+        padding: 0 100px;
+    }
+}
+
+@media(max-width: 1024px) {
+    .newsLetter{
+        width: 90%;
+        padding: 0 70px;
+    }
+    .newsLetter div{
+        width: 600px;
+    }
+}
+
+@media(max-width:800px) {
+    .newsLetter{
+        width: 90%;
+        padding: 0 40px;
+    }
+    .newsLetter h1{
+        font-size: 32px;
+    }
+    .newsLetter p{
+        font-size: 16px;
+    }
+    .newsLetter div{
+        width: 500px;
+    }
+}
+
+@media(max-width:600px) {
+    .newsLetter div{
+        width: 400px;
+    }
 }

@@ -8,3 +8,21 @@
     margin: 90px 170px 40px 170px;
     text-transform: capitalize;
 }
+
+@media(max-width: 1300px){
+    .breadcrum{
+        margin: 90px 100px 40px 100px;
+    }
+}
+
+@media(max-width: 1024px){
+    .breadcrum{
+        margin: 90px 80px 40px 80px;
+    }
+}
+
+@media(max-width: 800px){
+    .breadcrum{
+        margin: 90px 20px 40px 20px;
+    }
+}

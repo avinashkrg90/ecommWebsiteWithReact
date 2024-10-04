@@ -15,7 +15,6 @@
     width: 170px;
     height: 70px;
     border: 1px solid #d0d0d0;
-
 }
 
 .descriptionBoxNavBox.fade{
@@ -31,4 +30,22 @@
     padding: 48px;
     padding-bottom: 70px;
     color: #555;
+}
+
+@media(max-width: 1400px){
+    .descriptionBox{
+        margin: 80px 30px;
+    }
+}
+
+@media(max-width: 1024px){
+    .descriptionBox{
+        margin: 80px 60px;
+    }
+}
+
+@media(max-width: 800px){
+    .descriptionBox{
+        margin: 80px 10px;
+    }
 }
