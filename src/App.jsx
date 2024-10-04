@@ -12,6 +12,7 @@ import men_banner from './Components/Assets/banner_menImg.png'
 import women_banner from './Components/Assets/banner_womanImg.png'
 import kids_banner from './Components/Assets/banner_kidImg.png'
 import Footer from './Components/Footer/Footer'
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
