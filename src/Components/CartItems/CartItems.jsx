@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styles from './CartItems.module.css'
 import { ShopContext } from '../../Context/ShopContext'
 import remove_icon from '../Assets/cart_cross_icon.png'
 
 const CartItems = () => {
 
-    const { all_product, cartItems, removeFromCart, getTotalCartAmount } = useContext(ShopContext);
+    const { all_product, cartItems, addToCart, removeFromCart, removeAllFromCart, getTotalCartAmount } = useContext(ShopContext);
     return (
         <div className={styles.cartItems}>
             <div className={styles.cartItemsFormatMain}>
@@ -17,24 +17,35 @@ const CartItems = () => {
                 <p>Remove</p>
             </div>
             <hr />
-            {all_product.map((e) => {
-                if (cartItems[e.id] > 0) {
+
+            {
+                cartItems.map((item) => {
+                    console.log("item", item);
+                    let e = all_product.find((product) => product.id === Number(item.id))
+                    console.log('e', e)
                     return (
                         <>
                             <div className={`${styles.cartItemsFormat} ${styles.cartItemsFormatMain}`}>
                                 <img src={e.image} alt="image" className={styles.productIcon} />
                                 <p>{e.name}</p>
                                 <p>{e.new_price}</p>
-                                <button className={styles.cartItemsQuantity}>{cartItems[e.id]}</button>
-                                <p>${e.new_price * cartItems[e.id]}</p>
-                                <img className={styles.cartItemRemoveIcon} src={remove_icon} alt="" onClick={() => removeFromCart(e.id)} />
+                                <div className={styles.cartItemsQuantityBtnContainer}>
+                                    <button className={styles.cartItemsQuantity}>{item.quantity}</button>
+                                    <div className={styles.arrowsContainer}>
+                                        <i className="ri-arrow-up-s-fill" onClick={() => addToCart(e.id)}></i>
+                                        <i className="ri-arrow-down-s-fill" onClick={() => removeFromCart(e.id)}></i>
+                                    </div>
+                                </div>
+
+                                <p>${e.new_price * item.quantity}</p>
+                                <img className={styles.cartItemRemoveIcon} src={remove_icon} alt="" onClick={() => removeAllFromCart(e.id)} />
                             </div>
                             <hr />
                         </>
                     )
-                }
-                return null;
-            })}
+                })
+
+            }
             <div className={styles.cartItemsDown}>
                 <div className={styles.catItemsTotal}>
                     <h1>Cart Total</h1>
@@ -59,7 +70,7 @@ const CartItems = () => {
                 <div className={styles.cartItemsPromocode}>
                     <p>If you have a promo code, enter it here</p>
                     <div className={styles.cartItemsPromoBox}>
-                        <input type="text"  placeholder='Promo code'/>
+                        <input type="text" placeholder='Promo code' />
                         <button>Submit</button>
                     </div>
                 </div>

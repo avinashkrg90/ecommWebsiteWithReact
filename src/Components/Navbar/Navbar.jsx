@@ -17,7 +17,7 @@ const Navbar = () => {
     const handleClick = () => {
         if (loginState) {
             setLoginState(false);
-            toast.warning('You are logged out!', {position: "top-center", autoClose: 2000,});
+            toast.warning('You are logged out!', {position: "top-center", autoClose: 2000, hideProgressBar: true});
         } else {
             navigate('/login');
         }

@@ -30,11 +30,11 @@ const LoginSignup = () => {
       console.log('User signed in successfully!');
       setLoginState(true);
       navigate('/');
-      toast.success('Login successful!', {position: "top-center", autoClose: 2000,});
+      toast.success('Login successful!', {position: "top-center", autoClose: 2000, hideProgressBar: true});
     } catch (error) {
       console.log(error.message);
       setError(error.message);
-      toast.error('Oops, invalid credential!', {position: "top-center", autoClose: 2000,});
+      toast.error('Oops, invalid credential!', {position: "top-center", autoClose: 2000, hideProgressBar: true});
     }
   }
 
