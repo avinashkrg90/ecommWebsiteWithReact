@@ -25,6 +25,7 @@ const ShopContextProvider = (props) => {
     useEffect(()=>{
         getCartItems();
     }, [])
+
     // const addToCart = (itemId) => {
     //     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }))
     //     console.log(cartItems)
@@ -69,9 +70,13 @@ const ShopContextProvider = (props) => {
             if (docSnap.exists()) {
                 //update
                 // Set the "quantity" field of the item
-                await updateDoc(docRef, {
-                    quantity: docSnap.data().quantity - 1
-                });
+                if (docSnap.data().quantity > 1){
+                    await updateDoc(docRef, {
+                        quantity: docSnap.data().quantity - 1
+                    });
+                }else{
+                    await deleteDoc(docRef);
+                }
             } else {
                 toast.error('No item to remove!', { position: "top-center", autoClose: 2000, hideProgressBar: true });
             }
