@@ -2,15 +2,20 @@ import React, { useContext, useState } from 'react'
 import styles from './CSS/LoginSignup.module.css'
 import { app } from '../firebase';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import { UserContext } from '../context/UserContext';
+// import { UserContext } from '../context/UserContext';
+import { userLoggedIn, userLoggedOut } from '../Redux/userReducer';
+import { userSelector } from '../Redux/userReducer';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
 
 const LoginSignup = () => {
 
   const navigate = useNavigate();
   const [state, setState] = useState("Login");
-  const {loginState, setLoginState} = useContext(UserContext)
+  // const {loginState, setLoginState} = useContext(UserContext)
+  const { loginState } = useSelector(userSelector);
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -28,7 +33,8 @@ const LoginSignup = () => {
     try {
       await signInWithEmailAndPassword(auth, formData.email, formData.password);
       console.log('User signed in successfully!');
-      setLoginState(true);
+      // setLoginState(true);
+      dispatch(userLoggedIn());
       navigate('/');
       toast.success('Login successful!', {position: "top-center", autoClose: 2000, hideProgressBar: true});
     } catch (error) {

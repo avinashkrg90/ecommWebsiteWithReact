@@ -2,11 +2,15 @@ import React, { useContext } from 'react'
 import styles from './ProductDisplay.module.css'
 import star_icon from "../Assets/star_icon.png"
 import star_dull_icon from '../Assets/star_dull_icon.png'
-import { ShopContext } from '../../Context/ShopContext'
+// import { ShopContext } from '../../Context/ShopContext'
+import { addToCart, cartSelector } from '../../Redux/cartReducer'
+import { useDispatch, useSelector } from 'react-redux'
 
 const ProductDisplay = (props) => {
     const { product } = props;
-    const {addToCart} = useContext(ShopContext);
+    // const {addToCart} = useContext(ShopContext);
+    const dispatch = useDispatch();
+
     return (
         <>
             <div className={styles.productDisplay}>
@@ -48,7 +52,7 @@ const ProductDisplay = (props) => {
                         <div>XXL</div>
                     </div>
                 </div>
-                <button onClick={()=>addToCart(product.id)}>ADD TO CART</button>
+                <button onClick={()=>dispatch(addToCart(product.id))}>ADD TO CART</button>
                 <p className={styles.productDisplayRightCategory}><span>Category :</span>Women, T-shirt, Crop top</p>
                 <p className={styles.productDisplayRightCategory}><span>Tags :</span>Modern, Latest</p>
             </div>

@@ -1,12 +1,15 @@
 import React, { useContext } from 'react'
 import styles from './CSS/ShopCategory.module.css'
-import { ShopContext } from '../Context/ShopContext'
+// import { ShopContext } from '../Context/ShopContext'
 import dropdown_icon from '../Components/Assets/dropdown_icon.png'
 import Item from '../Components/Item/Item'
+import { cartSelector } from '../Redux/cartReducer'
+import { useSelector } from 'react-redux'
+import all_product from '../Components/Assets/all_product'
 
 const ShopCategory = (props) => {
-  const { all_product } = useContext(ShopContext);
-  console.log("all products", all_product);
+  // const { all_product } = useContext(ShopContext);
+
   return (
     <div className={styles.shopCategory}>
       <div className={styles.banner}>
